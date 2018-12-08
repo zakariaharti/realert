@@ -12,6 +12,10 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.12",
+    "@storybook/addon-links": "^4.0.12",
+    "@storybook/addons": "^4.0.12",
+    "@storybook/react": "^4.0.12",
     "babel-loader": "^8.0.4",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -21,14 +25,11 @@
     "eslint-plugin-react": "^7.11.1",
     "webpack": "^4.27.1",
     "webpack-clean-plugin": "^0.2.3",
-    "webpack-cli": "^3.1.2",
-    "@storybook/react": "^4.0.12",
-    "@storybook/addon-actions": "^4.0.12",
-    "@storybook/addon-links": "^4.0.12",
-    "@storybook/addons": "^4.0.12"
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
     "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "styled-components": "^4.1.2"
