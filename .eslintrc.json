@@ -1,0 +1,12 @@
+{
+    "extends": [
+      "airbnb",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "react": {
+        "createClass": "createReactClass",
+        "pragma": "React",
+      }
+    }
+}
