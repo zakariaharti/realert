@@ -3,12 +3,10 @@
     "extends": [
       "airbnb",
       "plugin:react/recommended",
-      "plugin:flowtype/recommended"
     ],
     "plugins": [
       "react",
       "jsx-a11y",
-      "flowtype"
     ],
     "rules": {
       "linebreak-style": 0,
