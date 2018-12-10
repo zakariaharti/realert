@@ -12,7 +12,7 @@ const KeyframeScale = keyframe`
   }
 
   45% {
-    transform: scale(1.05);
+    transform: scale(1.05)
   }
 
   80% {
