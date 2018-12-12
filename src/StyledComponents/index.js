@@ -1,8 +1,6 @@
 import styled, { keyframe } from 'styled-components';
 
-/* eslint-disable */
-
-const KeyframeScale = keyframe`
+export const KeyframeScale = keyframe`
   0% {
     transform: scale(1);
   }
@@ -23,7 +21,7 @@ const KeyframeScale = keyframe`
   }
 `;
 
-const StyledAlertOverlay = styled.div`
+export const StyledAlertWrapper = styled.div`
   :root {
     --alert-btn-confirm: #7cd1f9;
     --alert-btn-confirm-hover: var(--alert-btn-confirm);
@@ -40,6 +38,31 @@ const StyledAlertOverlay = styled.div`
     --alert-focus-color: rgba(43, 114, 165, 0.3);
   }
 
+  .realert-overlay-enter{
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .realert-overlay-enter-active{
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .realert-container-enter{
+    opacity: 0;
+    pointer-events: auto;
+  }
+
+  .realert-container-enter-active{
+    opacity: 1;
+    pointer-events: auto;
+    box-sizing: border-box;
+    animation: ${KeyframeScale} 0.3s;
+    will-change: transform;
+  }
+`;
+
+export const StyledAlertOverlay = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -53,9 +76,16 @@ const StyledAlertOverlay = styled.div`
   pointer-events: none;
   opacity: 0;
   transition: opacity .3s;
+
+  &::before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
 `;
 
-const StyledAlertContainer = styled.div`
+export const StyledAlertContainer = styled.div`
   width: 478px;
   pointer-events: none;
   background-color: #fff;
@@ -68,14 +98,14 @@ const StyledAlertContainer = styled.div`
   transform: scale(1);
   transform-origin: 50% 50%;
   z-index: 10001;
-  transition: opacity .2s,-webkit-transform .3s;
+  transition: opacity .2s,transform .3s;
 
   @media all and (max-width: 500px) {
     width: calc(100% - 20px);
   }
 `;
 
-const StyledTitle = styled.div`
+export const StyledTitle = styled.div`
   color: rgba(0, 0, 0, 0.65);
   font-weight: 600;
   text-transform: none;
@@ -98,7 +128,7 @@ const StyledTitle = styled.div`
   }
 `;
 
-const StyledContent = styled.div`
+export const StyledContent = styled.div`
   font-size: 16px;
   position: relative;
   float: none;
@@ -122,7 +152,7 @@ const StyledContent = styled.div`
   }
 `;
 
-const StyledAlertFooter = styled.div`
+export const StyledAlertFooter = styled.div`
   text-align: right;
   padding-top: 13px;
   margin-top: 13px;
@@ -132,15 +162,25 @@ const StyledAlertFooter = styled.div`
   border-top-right-radius: 0;
 `;
 
-const StyledAlertButtonsContainer = styled.div`
+export const StyledAlertButtonsContainer = styled.div`
   margin: 5px;
   display: inline-block;
   position: relative;
 `;
 
-const StyledAlertButton = styled.button`
-  background-color: var(--alert-btn-confirm);
-  color: white;
+export const StyledAlertButton = styled.button`
+  background-color: ${(props) => {
+    if (props.status === 'cancel') {
+      return 'var(--alert-btn-cancel)';
+    }
+    return 'var(--alert-btn-confirm)';
+  }};
+  color: ${(props) => {
+    if (props.status === 'cancel') {
+      return '#555555';
+    }
+    return 'white';
+  }};
   border: none;
   box-shadow: none;
   border-radius: 5px;
@@ -165,5 +205,21 @@ const StyledAlertButton = styled.button`
   &[disabled] {
     opacity: 0.5;
     cursor: default;
+  }
+`;
+
+export const StyledIcon = styled.div`
+  width: 80px;
+  height: 80px;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 50%;
+  padding: 0;
+  position: relative;
+  box-sizing: content-box;
+  margin: 20px auto;
+
+  &:first-child {
+    margin-top: 32px;
   }
 `;
