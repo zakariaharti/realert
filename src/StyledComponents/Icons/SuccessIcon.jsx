@@ -1,9 +1,9 @@
 import React from 'react';
-import styled, { keyframe } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import StyledIcon from '../index';
 
-const rotatePlaceholder = keyframe`
+const rotatePlaceholder = keyframes`
   0% {
     transform: rotate(-45deg);
   }
@@ -18,7 +18,7 @@ const rotatePlaceholder = keyframe`
   }
 `;
 
-const animateSuccessTip = keyframe`
+const animateSuccessTip = keyframes`
   0% {
     width: 0;
     left: 1px;
@@ -46,7 +46,7 @@ const animateSuccessTip = keyframe`
   }
 `;
 
-const animateSuccessLong = keyframe`
+const animateSuccessLong = keyframes`
   0% {
     width: 0;
     right: 46px;

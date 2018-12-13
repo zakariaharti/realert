@@ -1,6 +1,6 @@
-import styled, { keyframe } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-export const KeyframeScale = keyframe`
+export const KeyframeScale = keyframes`
   0% {
     transform: scale(1);
   }

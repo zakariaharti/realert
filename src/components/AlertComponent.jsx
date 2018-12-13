@@ -31,11 +31,12 @@ const AlertComponent = (props) => {
     icon,
     allowHTML,
     buttons,
-    dismissOnClickOutside,
+    /*dismissOnClickOutside,
     dismissOnEsc,
     dangerMode,
-    dismissAfter
+    dismissAfter*/
   } = props;
+
 
   return (
     <CSSTransition
@@ -53,7 +54,7 @@ const AlertComponent = (props) => {
               classNames="realert-container"
               unmountOnExit
             >
-              <StyledAlertContainer>
+              <StyledAlertContainer level={level}>
                 {
                   icon && icon == "success" ? (
                     <SuccessIcon />
@@ -74,6 +75,22 @@ const AlertComponent = (props) => {
                   ) : content ? (
                     <StyledContent>{content}</StyledContent>
                   ) : null
+                }
+
+                {
+                  buttons !== false && buttons.length ?
+                   <StyledAlertFooter>
+                     {
+                       buttons.map(btn => (
+                         <StyledAlertButtonsContainer>
+                           <StyledAlertButton onClick={btn.action && btn.action}>
+                             {btn.label.length && btn.label}
+                           </StyledAlertButton>
+                         </StyledAlertButtonsContainer>
+                       ))
+                     }
+                   </StyledAlertFooter>
+                  : null
                 }
               </StyledAlertContainer>
             </CSSTransition>
