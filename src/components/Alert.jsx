@@ -1,10 +1,22 @@
-// @flow
+import React, { Component } from 'react';
 
-const foo = (a: string = 'hello') => {
-  if (a === '') {
-    return 'jhf';
+class Alert extends Component {
+  state = {
+    isOpen: this.props.isOpen,
+  };
+
+  componentDidUpdate(prevProps) {
+    const { isOpen } = this.props;
+    if (prevProps.isOpen !== isOpen) {
+      this.setState({ isOpen: isOpen });
+    }
   }
-  return '';
-};
 
-export default foo;
+  render() {
+    return (
+      <p>gh</p>
+    );
+  }
+}
+
+export default Alert;

@@ -2,14 +2,11 @@
     "parser": "babel-eslint",
     "extends": [
       "airbnb",
-      "plugin:react/recommended"
     ],
     "plugins": [
-      "react",
-      "jsx-a11y"
+      "jsx-a11y",
     ],
     "rules": {
-      "react/prop-types": 0,
       "linebreak-style": 0,
       "import/no-extraneous-dependencies": [
         "error",
