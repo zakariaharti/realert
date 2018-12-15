@@ -18,7 +18,7 @@ class Alert extends Component {
     this.state = {
       isOpen: this.props.isOpen,
       timer: setTimeout(() => {
-  
+
       }, this.props.dismissAfter),
     };
 
@@ -101,6 +101,7 @@ class Alert extends Component {
 }
 
 Alert.defaultProps = {
+  isOpen: false,
   dismissAfter: 0
 };
 
