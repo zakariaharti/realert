@@ -8,15 +8,22 @@ import AlertComponent from './AlertComponent';
  * @author zakariaharti
  */
 class Alert extends Component {
-  /**
-   * state of the component
-   */
-  state = {
-    isOpen: this.props.isOpen,
-    timer: setTimeout(() => {
 
-    }, this.props.dismissAfter),
-  };
+  constructor(props){
+    super(props);
+
+    /**
+     * state of the component
+     */
+    this.state = {
+      isOpen: this.props.isOpen,
+      timer: setTimeout(() => {
+  
+      }, this.props.dismissAfter),
+    };
+
+    this.close.bind(this);
+  }
 
   /**
    * invoking onAdd with the component is mounted on the DOM
@@ -63,7 +70,7 @@ class Alert extends Component {
   /**
    * close the alert
    */
-  close = () = {
+  close(){
     if(this.state.isOpen){
       this.setState({ isOpen: false });
     }
