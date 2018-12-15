@@ -10,5 +10,5 @@ module.exports = {
     "jsx"
   ],
   "coverageDirectory": "./coverage",
-  "setupTestFrameworkScriptFile": "<rootDir>test/init.js"
+  "setupTestFrameworkScriptFile": "<rootDir>src/helpers/initTests.js"
 };
