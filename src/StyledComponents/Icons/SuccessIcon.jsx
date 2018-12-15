@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import StyledIcon from '../index';
+import {StyledIcon} from '../index';
 
 const rotatePlaceholder = keyframes`
   0% {
