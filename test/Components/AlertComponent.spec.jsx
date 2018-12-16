@@ -75,12 +75,22 @@ describe('test <AlertComponent />',() => {
   it('should render html title when allowHTML is true',() => {
     alertData.isOpen = true;
     alertData.allowHTML = true;
-    alertData.title = '<strong>title here!</strong>'
+    alertData.title = '<strong>title here!</strong>';
 
-    const AlertMounted = shallow(<AlertComponent {...alertData} />);
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
     const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
 
-    //expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
-    expect(AlertMounted.contains(<strong>title here!</strong>)).toEqual(true);
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
+
+  it('should render title when allowHTML is false',() => {
+    alertData.isOpen = true;
+    alertData.allowHTML = false;
+    alertData.title = 'title here!';
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
 });
