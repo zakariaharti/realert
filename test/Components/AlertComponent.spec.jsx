@@ -17,10 +17,6 @@ describe('test <AlertComponent />',() => {
     alertData = getAlert();
   });
 
-  it('should render without errors',() => {
-    mount(<AlertComponent />);
-  });
-
   it('should mount with initial isOpen prop',() => {
     let AlertMounted = null;
     alertData.isOpen = false;
@@ -34,5 +30,14 @@ describe('test <AlertComponent />',() => {
     AlertMounted = mount(<AlertComponent {...alertData} />);
 
     expect(AlertMounted.prop('isOpen')).toEqual(true);
+  });
+
+  it('should not render title if not provided',() => {
+    let AlertMounted = null;
+    alertData.title = null;
+
+    AlertMounted = mount(<AlertComponent {...alertData} />);
+
+    expect(AlertMounted.prop('title')).toEqual(null);
   });
 });

@@ -47,54 +47,56 @@ const AlertComponent = (props) => {
     >
       <StyledAlertWrapper>
         <StyledAlertOverlay>
-          {state => (
-            <CSSTransition
-              in={state == 'entered'}
-              timeout={300}
-              classNames="realert-container"
-              unmountOnExit
-            >
-              <StyledAlertContainer level={level}>
-                {
-                  icon && icon == "success" ? (
-                    <SuccessIcon />
-                  ) : null
-                }
+          {state => {
+            return(
+              <CSSTransition
+                in={state == 'entered'}
+                timeout={300}
+                classNames="realert-container"
+                unmountOnExit
+              >
+                <StyledAlertContainer level={level}>
+                  {
+                    icon && icon == "success" ? (
+                      <SuccessIcon />
+                    ) : null
+                  }
 
-                {
-                  allowHTML && title && title.length ? (
-                    <div dangerouslySetInnerHTML={getContent(title)} />
-                  ) : title ? (
-                    <StyledTitle>{title}</StyledTitle>
-                  ) : null
-                }
+                  {
+                    allowHTML && title && title.length ? (
+                      <div dangerouslySetInnerHTML={getContent(title)} />
+                    ) : title ? (
+                      <StyledTitle>{title}</StyledTitle>
+                    ) : null
+                  }
 
-                {
-                  allowHTML && content && content.length ? (
-                    <div dangerouslySetInnerHTML={getContent(content)} />
-                  ) : content ? (
-                    <StyledContent>{content}</StyledContent>
-                  ) : null
-                }
+                  {
+                    allowHTML && content && content.length ? (
+                      <div dangerouslySetInnerHTML={getContent(content)} />
+                    ) : content ? (
+                      <StyledContent>{content}</StyledContent>
+                    ) : null
+                  }
 
-                {
-                  buttons !== false && buttons.length ?
-                   <StyledAlertFooter>
-                     {
-                       buttons.map(btn => (
-                         <StyledAlertButtonsContainer>
-                           <StyledAlertButton onClick={btn.action && btn.action}>
-                             {btn.label.length && btn.label}
-                           </StyledAlertButton>
-                         </StyledAlertButtonsContainer>
-                       ))
-                     }
-                   </StyledAlertFooter>
-                  : null
-                }
-              </StyledAlertContainer>
-            </CSSTransition>
-          )}
+                  {
+                    buttons !== false && buttons.length ?
+                     <StyledAlertFooter>
+                       {
+                         buttons.map(btn => (
+                           <StyledAlertButtonsContainer>
+                             <StyledAlertButton onClick={btn.action && btn.action}>
+                               {btn.label.length && btn.label}
+                             </StyledAlertButton>
+                           </StyledAlertButtonsContainer>
+                         ))
+                       }
+                     </StyledAlertFooter>
+                    : null
+                  }
+                </StyledAlertContainer>
+              </CSSTransition>
+            )
+          }}
         </StyledAlertOverlay>
       </StyledAlertWrapper>
     </CSSTransition>
