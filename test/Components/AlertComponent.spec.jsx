@@ -142,4 +142,23 @@ describe('test <AlertComponent />',() => {
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
+
+  it('should call button action',() => {
+    let num = 0;
+    alertData.isOpen = true;
+    alertData.buttons = [
+      {
+        label: 'submit',
+        action : () => num++
+      },
+      {
+        label: 'cool',
+      }
+    ];
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    AlertMounted.find('button').first().simulate('click');
+
+    expect(num).toEqual(1);
+  });
 });
