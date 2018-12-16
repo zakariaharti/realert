@@ -71,4 +71,15 @@ describe('test <AlertComponent />',() => {
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
+
+  it('should render html title when allowHTML is true',() => {
+    alertData.isOpen = true;
+    alertData.allowHTML = true;
+    alertData.title = '<strong>title here!</strong>'
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
 });
