@@ -115,4 +115,14 @@ describe('test <AlertComponent />',() => {
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
+
+  it('should render not render buttons when false',() => {
+    alertData.isOpen = true;
+    alertData.buttons = false;
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
 });
