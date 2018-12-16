@@ -18,4 +18,17 @@ describe('test <Alert />',() => {
 
     expect(Mounted.state().isOpen).toBe(true);
   });
+
+  it('should render with change state',() => {
+    alertData.isOpen = false;
+    let Mounted = null;
+    Mounted = mount(<Alert {...alertData} />);
+
+    expect(Mounted.state().isOpen).toBe(false);
+
+    alertData.isOpen = true;
+    Mounted = mount(<Alert {...alertData} />);
+
+    expect(Mounted.state().isOpen).toBe(true);
+  });
 });
