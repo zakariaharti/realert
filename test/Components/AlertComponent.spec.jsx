@@ -93,4 +93,26 @@ describe('test <AlertComponent />',() => {
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
+
+  it('should render html content when allowHTML is true',() => {
+    alertData.isOpen = true;
+    alertData.allowHTML = true;
+    alertData.content = '<strong>content here!</strong>';
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
+
+  it('should render content when allowHTML is false',() => {
+    alertData.isOpen = true;
+    alertData.allowHTML = false;
+    alertData.content = 'content here!';
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
 });
