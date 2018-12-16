@@ -81,5 +81,6 @@ describe('test <AlertComponent />',() => {
     const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+    expect(AlertMounted.contains(<strong>title here!</strong>)).toEqual(true);
   });
 });
