@@ -4,7 +4,7 @@ export function getAlert(alert = {}) {
     title: "this is title",
     content: "this is content",
     level: "this is level",
-    icon: "this is icon",
+    icon: "",
     allowHTML: false,
     timeout: 0
   }, alert);

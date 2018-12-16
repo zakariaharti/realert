@@ -44,7 +44,27 @@ describe('test <AlertComponent />',() => {
 
   it('should render without errors',() => {
     alertData.isOpen = true;
-    alertData.timeout = 0;
+    alertData.timeout = 400;
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
+
+  it('should render success icon',() => {
+    alertData.isOpen = true;
+    alertData.icon = "success";
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
+
+  it('should not render icon if null',() => {
+    alertData.isOpen = true;
+    alertData.icon = null;
 
     const AlertMounted = mount(<AlertComponent {...alertData} />);
     const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
