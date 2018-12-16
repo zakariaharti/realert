@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid/v1';
 
 /* eslint-disable */
 
@@ -69,7 +70,7 @@ export const ExpectedAlertComponent = (props) => {
                    <StyledAlertFooter>
                      {
                        buttons.map(btn => (
-                         <StyledAlertButtonsContainer>
+                         <StyledAlertButtonsContainer key={uuid()}>
                            <StyledAlertButton onClick={btn.action && btn.action}>
                              {btn.label.length && btn.label}
                            </StyledAlertButton>

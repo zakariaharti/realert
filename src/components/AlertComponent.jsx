@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import uuid from 'uuid/v1';
 
 /* eslint-disable */
 
@@ -83,7 +84,7 @@ const AlertComponent = (props) => {
                      <StyledAlertFooter>
                        {
                          buttons.map(btn => (
-                           <StyledAlertButtonsContainer>
+                           <StyledAlertButtonsContainer key={uuid()}>
                              <StyledAlertButton onClick={btn.action && btn.action}>
                                {btn.label.length && btn.label}
                              </StyledAlertButton>

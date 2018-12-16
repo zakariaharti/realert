@@ -125,4 +125,21 @@ describe('test <AlertComponent />',() => {
 
     expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
+
+  it('should render buttons',() => {
+    alertData.isOpen = true;
+    alertData.buttons = [
+      {
+        label: 'submit',
+      },
+      {
+        label: 'cool',
+      }
+    ];
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
+  });
 });
