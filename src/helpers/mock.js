@@ -6,5 +6,6 @@ export function getAlert(alert = {}) {
     level: "this is level",
     icon: "this is icon",
     allowHTML: false,
+    timeout: 0
   }, alert);
 }

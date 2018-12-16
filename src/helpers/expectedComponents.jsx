@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
 
 /* eslint-disable */
 
@@ -22,7 +21,7 @@ const getContent = (content) => {
   }
 };
 
-const AlertComponent = (props) => {
+export const ExpectedAlertComponent = (props) => {
   const {
     isOpen,
     title,
@@ -39,21 +38,8 @@ const AlertComponent = (props) => {
 
 
   return (
-    <CSSTransition
-      in={isOpen}
-      timeout={300}
-      classNames="realert-overlay"
-      unmountOnExit
-    >
       <StyledAlertWrapper>
         <StyledAlertOverlay>
-          {state => (
-            <CSSTransition
-              in={state == 'entered'}
-              timeout={300}
-              classNames="realert-container"
-              unmountOnExit
-            >
               <StyledAlertContainer level={level}>
                 {
                   icon && icon == "success" ? (
@@ -78,6 +64,7 @@ const AlertComponent = (props) => {
                 }
 
                 {
+                  typeof buttons !== 'undefined' &&
                   buttons !== false && buttons.length ?
                    <StyledAlertFooter>
                      {
@@ -93,12 +80,7 @@ const AlertComponent = (props) => {
                   : null
                 }
               </StyledAlertContainer>
-            </CSSTransition>
-          )}
         </StyledAlertOverlay>
       </StyledAlertWrapper>
-    </CSSTransition>
   );
 };
-
-export default AlertComponent;

@@ -31,6 +31,7 @@ const AlertComponent = (props) => {
     icon,
     allowHTML,
     buttons,
+    timeout,
     /*dismissOnClickOutside,
     dismissOnEsc,
     dangerMode,
@@ -41,17 +42,15 @@ const AlertComponent = (props) => {
   return (
     <CSSTransition
       in={isOpen}
-      timeout={300}
+      timeout={timeout || 300}
       classNames="realert-overlay"
       unmountOnExit
     >
       <StyledAlertWrapper>
         <StyledAlertOverlay>
-          {state => {
-            return(
               <CSSTransition
-                in={state == 'entered'}
-                timeout={300}
+                in={isOpen}
+                timeout={timeout || 300}
                 classNames="realert-container"
                 unmountOnExit
               >
@@ -79,6 +78,7 @@ const AlertComponent = (props) => {
                   }
 
                   {
+                    typeof buttons !== 'undefined' &&
                     buttons !== false && buttons.length ?
                      <StyledAlertFooter>
                        {
@@ -95,8 +95,6 @@ const AlertComponent = (props) => {
                   }
                 </StyledAlertContainer>
               </CSSTransition>
-            )
-          }}
         </StyledAlertOverlay>
       </StyledAlertWrapper>
     </CSSTransition>

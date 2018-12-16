@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import AlertComponent from '../../src';
+import { ExpectedAlertComponent } from '../../src/helpers/expectedComponents';
 import { getAlert } from '../../src/helpers/mock';
 import {
   StyledAlertContainer,
@@ -39,5 +40,15 @@ describe('test <AlertComponent />',() => {
     AlertMounted = mount(<AlertComponent {...alertData} />);
 
     expect(AlertMounted.prop('title')).toEqual(null);
+  });
+
+  it('should render without errors',() => {
+    alertData.isOpen = true;
+    alertData.timeout = 0;
+
+    const AlertMounted = mount(<AlertComponent {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
 });
