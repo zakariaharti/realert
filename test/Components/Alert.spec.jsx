@@ -32,13 +32,15 @@ describe('test <Alert />',() => {
     expect(Mounted.state().isOpen).toBe(true);
   });
 
-  it('should timer be null if dismissAfter is 0',() => {
+  it('should closed after dismissAfter duration',(done) => {
     alertData.isOpen = true;
-    alertData.dismissAfter = 0;
-    let Mounted = null;
+    alertData.dismissAfter = 300;
 
-    Mounted = mount(<Alert {...alertData} />);
+    const Mounted = mount(<Alert {...alertData} />);
 
-    expect(Mounted.state().timer).toBe(null);
+    window.setTimeout(() => {
+      expect(Mounted.state().isOpen).toEqual(false);
+      done();
+    }, 400);
   });
 });
