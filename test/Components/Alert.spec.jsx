@@ -35,8 +35,9 @@ describe('test <Alert />',() => {
   it('should closed after dismissAfter duration',(done) => {
     alertData.isOpen = true;
     alertData.dismissAfter = 300;
+    let Mounted = null;
 
-    const Mounted = mount(<Alert {...alertData} />);
+    Mounted = mount(<Alert {...alertData} />);
 
     window.setTimeout(() => {
       expect(Mounted.state().isOpen).toEqual(false);
