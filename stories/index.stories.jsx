@@ -3,16 +3,29 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import Alert from '../src';
+import PlayGround from './PlayGround';
+
+const mockData = {
+  title: "this is title",
+  content: "this is content",
+  level: "this is level",
+  icon: "",
+  allowHTML: false,
+};
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp="" />);
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
+storiesOf('example', module)
+  .add('basic', () => (
+    <PlayGround>
+      {(isOpen, openAlert) => (
+        <button onClick={openAlert}>open me!</button>
+
+        <Alert
+          isOpen={isOpen}
+          {...mockData}
+        />
+      )}
+    </PlayGround>
   ));
