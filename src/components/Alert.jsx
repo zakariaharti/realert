@@ -63,7 +63,7 @@ class Alert extends Component {
 
     const { onRemove } = this.props;
     if(onRemove && typeof onRemove === "function"){
-      onAdd(this);
+      onRemove();
     }
   }
 

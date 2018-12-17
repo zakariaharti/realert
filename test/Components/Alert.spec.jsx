@@ -43,4 +43,24 @@ describe('test <Alert />',() => {
       done();
     }, 400);
   });
+
+  it('should call onAdd on mouning',() => {
+    let num = 0;
+    alertData.isOpen = true;
+    alertData.onAdd = () => num++;
+
+    const Mounted = mount(<Alert {...alertData} />);
+    expect(num).toEqual(1);
+  });
+
+  it('should call onRemove on unMouning',() => {
+    let num = 0;
+    alertData.isOpen = true;
+    alertData.onRemove = () => num++;
+
+    const Mounted = mount(<Alert {...alertData} />);
+    Mounted.unmount();
+
+    expect(num).toEqual(1);
+  });
 });
