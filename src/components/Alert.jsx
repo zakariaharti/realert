@@ -49,7 +49,7 @@ class Alert extends Component {
     if (prevProps.dismissAfter !== dismissAfter) {
       this.setState({
         timer: setTimeout(() => {
-          this.close();
+
          }, this.props.dismissAfter)
       });
     }

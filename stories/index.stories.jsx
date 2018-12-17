@@ -14,18 +14,7 @@ const mockData = {
   allowHTML: false,
 };
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp="" />);
-
 storiesOf('example', module)
   .add('basic', () => (
-    <PlayGround>
-      {(isOpen, openAlert) => (
-        <button onClick={openAlert}>open me!</button>
-
-        <Alert
-          isOpen={isOpen}
-          {...mockData}
-        />
-      )}
-    </PlayGround>
+    <PlayGround />
   ));

@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class PlayGround extends React.Component {
-  constructor(props) {
+import Alert from '../src';
+
+const mockData = {
+  title: "this is title",
+  content: "this is content",
+  level: "this is level",
+  icon: "",
+  allowHTML: false,
+};
+
+class PlayGround extends Component {
+
+  constructor(props){
     super(props);
 
+    /**
+     * state of the component
+     */
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
-
-    this.openAlert.bind(this);
-  }
-
-  openAlert(){
-    this.setState({ isOpen: !this.state.isOpen });
   }
 
   render(){
-    return this.props.children(this.state.isOpen, this.openAlert);
+    return(
+      <div>
+        <button onClick={() => {this.setState({ isOpen: !this.state.isOpen })}}>open me!</button>
+
+        <Alert
+          isOpen={this.state.isOpen}
+          {...mockData}
+        />
+      </div>
+    );
   }
 }
 

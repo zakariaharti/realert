@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const KeyframeScale = keyframes`
   0% {
@@ -46,6 +46,16 @@ export const StyledAlertWrapper = styled.div`
   .realert-overlay-enter-active{
     pointer-events: none;
     opacity: 1;
+  }
+
+  .realert-overlay-exit{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .realert-overlay-enter-active{
+    pointer-events: none;
+    opacity: 0;
   }
 
   .realert-container-enter{
