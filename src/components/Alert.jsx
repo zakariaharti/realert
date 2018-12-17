@@ -17,8 +17,8 @@ class Alert extends Component {
      */
     this.state = {
       isOpen: this.props.isOpen,
-      timer: setTimeout(() => {
-
+      timer: window.setTimeout(() => {
+        this.close();
       }, this.props.dismissAfter),
     };
 
@@ -31,7 +31,7 @@ class Alert extends Component {
   componentDidMount(){
     const { onAdd } = this.props;
     if(onAdd && typeof onAdd === "function"){
-      onAdd(this);
+      onAdd();
     }
   }
 
@@ -102,7 +102,7 @@ class Alert extends Component {
 
 Alert.defaultProps = {
   isOpen: false,
-  dismissAfter: 0
+  dismissAfter: 3000
 };
 
 export default Alert;
