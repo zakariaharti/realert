@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 
 import { getAlert } from '../../src/helpers/mock';
 import Alert from '../../src';
+import { ExpectedAlertComponent } from '../../src/helpers/expectedComponents';
 
 describe('test <Alert />',() => {
   let alertData = null;
@@ -63,5 +64,14 @@ describe('test <Alert />',() => {
     Mounted.unmount();
 
     expect(num).toEqual(1);
+  });
+
+  it('should render AlertComponent',() => {
+    alertData.isOpen = true;
+
+    const AlertMounted = mount(<Alert {...alertData} />);
+    const ExpectedAlert = mount(<ExpectedAlertComponent {...alertData} />);
+
+    expect(AlertMounted.html()).toEqual(ExpectedAlert.html());
   });
 });
