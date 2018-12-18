@@ -48,37 +48,37 @@ const AlertComponent = (props) => {
         classNames="realert-overlay"
         unmountOnExit
       >
-          <StyledAlertOverlay>
-                <CSSTransition
-                  in={isOpen}
-                  timeout={timeout || 300}
-                  classNames="realert-container"
-                  unmountOnExit
-                >
-                  <StyledAlertContainer level={level}>
-                    {
-                      icon && icon == "success" ? (
+         <StyledAlertOverlay>
+            <CSSTransition
+              in={true}
+              timeout={timeout || 500}
+              classNames="container"
+              unmountOnExit
+            >
+              <StyledAlertContainer level={level}>
+                  {
+                    icon && icon == "success" ? (
                         <SuccessIcon />
                       ) : null
-                    }
+                  }
 
-                    {
+                  {
                       allowHTML && title && title.length ? (
                         <div dangerouslySetInnerHTML={getContent(title)} />
                       ) : title ? (
                         <StyledTitle>{title}</StyledTitle>
                       ) : null
-                    }
+                  }
 
-                    {
+                  {
                       allowHTML && content && content.length ? (
                         <div dangerouslySetInnerHTML={getContent(content)} />
                       ) : content ? (
                         <StyledContent>{content}</StyledContent>
                       ) : null
-                    }
+                  }
 
-                    {
+                  {
                       typeof buttons !== 'undefined' &&
                       buttons !== false && buttons.length ?
                        <StyledAlertFooter>
@@ -93,9 +93,9 @@ const AlertComponent = (props) => {
                          }
                        </StyledAlertFooter>
                       : null
-                    }
-                  </StyledAlertContainer>
-                </CSSTransition>
+                  }
+                </StyledAlertContainer>
+            </CSSTransition>
           </StyledAlertOverlay>
       </CSSTransition>
     </StyledAlertWrapper>

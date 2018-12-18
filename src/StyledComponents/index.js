@@ -53,7 +53,7 @@ export const StyledAlertWrapper = styled.div`
     opacity: 0.5;
   }
 
-  .realert-overlay-enter-active{
+  .realert-overlay-exit-active{
     pointer-events: none;
     opacity: 0;
   }
@@ -84,7 +84,7 @@ export const StyledAlertOverlay = styled.div`
   background-color: rgba(0,0,0,.4);
   z-index: 10000;
   pointer-events: none;
-  opacity: 0;
+  /*opacity: 0;*/
   transition: opacity .3s;
 
   &::before {

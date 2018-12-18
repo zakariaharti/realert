@@ -75,7 +75,7 @@ const StyledSuccessIcon = styled(StyledIcon)`
      --swal-green-light: rgba(165, 220, 134, 0.2);
    }
 
-   border-color: var(--swal-green);
+   border-color: #A5DC86;
 
   &::before,
   &::after {
@@ -108,7 +108,7 @@ const StyledSuccessIcon = styled(StyledIcon)`
   .ring {
     width: 80px;
     height: 80px;
-    border: 4px solid var(--swal-green-light);
+    border: 4px solid rgba(165, 220, 134, 0.2);
     border-radius: 50%;
     box-sizing: content-box;
     position: absolute;
@@ -129,23 +129,23 @@ const StyledSuccessIcon = styled(StyledIcon)`
     transform: rotate(-45deg);
   }
 
-  line {
+  .line {
     height: 5px;
-    background-color: var(--swal-green);
+    background-color: green;
     display: block;
     border-radius: 2px;
     position: absolute;
     z-index: 2;
   }
 
-  line--tip {
+  .line--tip {
     width: 25px;
     left: 14px;
     top: 46px;
     transform: rotate(45deg);
     animation: ${animateSuccessTip} 0.75s;
   }
-  line--long {
+  .line--long {
     width: 47px;
     right: 8px;
     top: 38px;
