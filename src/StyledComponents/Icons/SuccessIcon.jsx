@@ -70,12 +70,7 @@ const animateSuccessLong = keyframes`
 `;
 
 const StyledSuccessIcon = styled(StyledIcon)`
-   :root {
-     --swal-green: #A5DC86;
-     --swal-green-light: rgba(165, 220, 134, 0.2);
-   }
-
-   border-color: #A5DC86;
+   border-color: var(--realert-green);
 
   &::before,
   &::after {
@@ -108,7 +103,7 @@ const StyledSuccessIcon = styled(StyledIcon)`
   .ring {
     width: 80px;
     height: 80px;
-    border: 4px solid rgba(165, 220, 134, 0.2);
+    border: 4px solid var(--realert-green-light);
     border-radius: 50%;
     box-sizing: content-box;
     position: absolute;
@@ -131,7 +126,7 @@ const StyledSuccessIcon = styled(StyledIcon)`
 
   .line {
     height: 5px;
-    background-color: green;
+    background-color: var(--realert-green);
     display: block;
     border-radius: 2px;
     position: absolute;

@@ -15,7 +15,10 @@ import {
   StyledAlertButtonsContainer
 } from '../StyledComponents';
 
-import SuccessIcon from '../StyledComponents/Icons';
+import {
+  SuccessIcon,
+  WarningIcon
+} from '../StyledComponents/Icons';
 
 const getContent = (content) => {
   return {
@@ -42,6 +45,7 @@ const AlertComponent = (props) => {
 
   return (
     <StyledAlertWrapper>
+
       <CSSTransition
         in={isOpen}
         timeout={timeout || 300}
@@ -49,16 +53,20 @@ const AlertComponent = (props) => {
         unmountOnExit
       >
          <StyledAlertOverlay>
+
             <CSSTransition
               in={true}
-              timeout={timeout || 500}
-              classNames="container"
+              timeout={300}
+              classNames="realert-container"
               unmountOnExit
             >
-              <StyledAlertContainer level={level}>
+
+              <StyledAlertContainer>
                   {
                     icon && icon == "success" ? (
                         <SuccessIcon />
+                      ) : icon == "warning" ? (
+                        <WarningIcon />
                       ) : null
                   }
 
@@ -95,9 +103,12 @@ const AlertComponent = (props) => {
                       : null
                   }
                 </StyledAlertContainer>
+
             </CSSTransition>
+
           </StyledAlertOverlay>
       </CSSTransition>
+
     </StyledAlertWrapper>
   );
 };

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import AlertComponent from './AlertComponent';
+import GlobalStyles from '../StyledComponents/GlobalStyles';
 
 /**
  * Alert component class
@@ -17,9 +18,7 @@ class Alert extends Component {
      */
     this.state = {
       isOpen: this.props.isOpen,
-      timer: window.setTimeout(() => {
-        this.close();
-      }, this.props.dismissAfter),
+      timer: this.props.dismissAfter,
     };
 
     this.close.bind(this);
@@ -47,11 +46,13 @@ class Alert extends Component {
       this.setState({ isOpen: isOpen });
     }
     if (prevProps.dismissAfter !== dismissAfter) {
-      this.setState({
-        timer: setTimeout(() => {
+      this.setState({ timer: dismissAfter });
+    }
 
-         }, this.props.dismissAfter)
-      });
+    if(this.state.dismissAfter > 0){
+      window.setTimeout(() => {
+        this.close();
+      }, this.state.dismissAfter)
     }
   }
 
@@ -87,22 +88,26 @@ class Alert extends Component {
       buttons,
     } = this.props;
     return (
-      <AlertComponent
-        isOpen={this.state.isOpen}
-        title={title}
-        content={content}
-        level={level}
-        icon={icon}
-        allowHTML={allowHTML}
-        buttons={buttons}
-      />
+      <Fragment>
+        <GlobalStyles />
+
+        <AlertComponent
+          isOpen={this.state.isOpen}
+          title={title}
+          content={content}
+          level={level}
+          icon={icon}
+          allowHTML={allowHTML}
+          buttons={buttons}
+        />
+      </Fragment>
     );
   }
 }
 
 Alert.defaultProps = {
   isOpen: false,
-  dismissAfter: 3000
+  dismissAfter: 0
 };
 
 export default Alert;

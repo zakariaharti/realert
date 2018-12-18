@@ -8,6 +8,7 @@ const mockData = {
   level: "this is level",
   icon: "success",
   allowHTML: false,
+  dimsissAfter: 0
 };
 
 class PlayGround extends Component {

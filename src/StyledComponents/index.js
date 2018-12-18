@@ -22,22 +22,6 @@ export const KeyframeScale = keyframes`
 `;
 
 export const StyledAlertWrapper = styled.div`
-  :root {
-    --alert-btn-confirm: #7cd1f9;
-    --alert-btn-confirm-hover: var(--alert-btn-confirm);
-    --alert-btn-confirm-active: var(--alert-btn-confirm);
-
-    --alert-btn-cancel: #EFEFEF;
-    --alert-btn-cancel-hover: var(--alert-btn-cancel);
-    --alert-btn-cancel-active: var(--alert-btn-cancel);
-
-    --alert-btn-danger: #e64942;
-    --alert-btn-danger-hover: var(--alert-btn-danger);
-    --alert-btn-danger-active: var(--alert-btn-danger);
-
-    --alert-focus-color: rgba(43, 114, 165, 0.3);
-  }
-
   .realert-overlay-enter{
     pointer-events: none;
     opacity: 0;
@@ -73,6 +57,7 @@ export const StyledAlertWrapper = styled.div`
 `;
 
 export const StyledAlertOverlay = styled.div`
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -84,7 +69,6 @@ export const StyledAlertOverlay = styled.div`
   background-color: rgba(0,0,0,.4);
   z-index: 10000;
   pointer-events: none;
-  /*opacity: 0;*/
   transition: opacity .3s;
 
   &::before {
@@ -108,7 +92,12 @@ export const StyledAlertContainer = styled.div`
   transform: scale(1);
   transform-origin: 50% 50%;
   z-index: 10001;
-  transition: opacity .2s,transform .3s;
+  transition: opacity .2s, transform .3s;
+  opacity: 1;
+  pointer-events: auto;
+  box-sizing: border-box;
+  animation: ${KeyframeScale} 0.3s;
+  will-change: transform;
 
   @media all and (max-width: 500px) {
     width: calc(100% - 20px);
@@ -181,9 +170,9 @@ export const StyledAlertButtonsContainer = styled.div`
 export const StyledAlertButton = styled.button`
   background-color: ${(props) => {
     if (props.status === 'cancel') {
-      return 'var(--alert-btn-cancel)';
+      return 'var(--realert-btn-cancel)';
     }
-    return 'var(--alert-btn-confirm)';
+    return 'var(--realert-btn-confirm)';
   }};
   color: ${(props) => {
     if (props.status === 'cancel') {
@@ -201,10 +190,10 @@ export const StyledAlertButton = styled.button`
   cursor: pointer;
 
   &:not([disabled]):hover {
-    background-color: var(--alert-btn-confirm-hover);
+    background-color: var(--realert-btn-confirm-hover);
   }
   &:active {
-    background-color: var(--alert-btn-confirm-active);
+    background-color: var(--realert-btn-confirm-active);
   }
   &:focus {
     outline: none;
