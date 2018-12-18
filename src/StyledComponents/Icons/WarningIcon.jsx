@@ -8,7 +8,7 @@ const pulseWarning = keyframes`
     border-color: #F8D486;
   }
   to {
-    border-color: var(--swal-orange);
+    border-color: var(--realert-orange);
   }
 `;
 
@@ -42,8 +42,8 @@ const StyledWarningIcon = styled(StyledIcon)`
 
 const WarningIcon = () => (
   <StyledWarningIcon>
-    <span class="icon--warning__body">
-        <span class="icon--warning__dot"></span>
+    <span className="icon--warning__body">
+        <span className="icon--warning__dot"></span>
     </span>
   </StyledWarningIcon>
 );
