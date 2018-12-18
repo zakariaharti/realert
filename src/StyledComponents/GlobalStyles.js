@@ -22,6 +22,8 @@ const GlobalStyles = createGlobalStyle`
     --realert-orange: #F8BB86;
 
     --realert-red: #F27474;
+
+    --realert-blue: #C9DAE1;
   }
 `;
 

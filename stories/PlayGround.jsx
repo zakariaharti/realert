@@ -6,7 +6,7 @@ const mockData = {
   title: "this is title",
   content: "this is content",
   level: "this is level",
-  icon: "warning",
+  icon: "error",
   allowHTML: false,
   dimsissAfter: 0
 };

@@ -36,8 +36,8 @@ const animateXMark = keyframes`
 }
 `;
 
-const StyledWarningIcon = styled(StyledIcon)`
-   border-color: var(--relart-red);
+const StyledErrorIcon = styled(StyledIcon)`
+   border-color: var(--realert-red);
    animation: ${animateErrorIcon} 0.5s;
 
   .x-mark {
