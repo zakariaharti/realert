@@ -17,7 +17,8 @@ import {
 
 import {
   SuccessIcon,
-  WarningIcon
+  WarningIcon,
+  ErrorIcon
 } from '../StyledComponents/Icons';
 
 const getContent = (content) => {
@@ -67,6 +68,8 @@ const AlertComponent = (props) => {
                         <SuccessIcon />
                       ) : icon == "warning" ? (
                         <WarningIcon />
+                      ) : icon == "error" ? (
+                        <ErrorIcon />
                       ) : null
                   }
 

@@ -20,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
     --realert-green-light: rgba(165, 220, 134, 0.2);
 
     --realert-orange: #F8BB86;
+
+    --realert-red: #F27474;
   }
 `;
 
