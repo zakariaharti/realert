@@ -16,5 +16,5 @@ const mockData = {
 
 storiesOf('example', module)
   .add('basic', () => (
-    <PlayGround />
+    <PlayGround {...mockData} />
   ));

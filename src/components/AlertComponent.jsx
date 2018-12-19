@@ -33,15 +33,13 @@ const AlertComponent = (props) => {
     isOpen,
     title,
     content,
-    level,
     icon,
     allowHTML,
     buttons,
     timeout,
-    /*dismissOnClickOutside,
-    dismissOnEsc,
+    /*
     dangerMode,
-    dismissAfter*/
+    */
   } = props;
 
 
@@ -77,7 +75,7 @@ const AlertComponent = (props) => {
                   }
 
                   {
-                      allowHTML && title && title.length ? (
+                      allowHTML && title ? (
                         <div dangerouslySetInnerHTML={getContent(title)} />
                       ) : title ? (
                         <StyledTitle>{title}</StyledTitle>
@@ -85,7 +83,7 @@ const AlertComponent = (props) => {
                   }
 
                   {
-                      allowHTML && content && content.length ? (
+                      allowHTML && content ? (
                         <div dangerouslySetInnerHTML={getContent(content)} />
                       ) : content ? (
                         <StyledContent>{content}</StyledContent>
@@ -99,7 +97,10 @@ const AlertComponent = (props) => {
                          {
                            buttons.map(btn => (
                              <StyledAlertButtonsContainer key={uuid()}>
-                               <StyledAlertButton onClick={btn.action && btn.action}>
+                               <StyledAlertButton
+                                 type={btn.type || 'primary'}
+                                 onClick={btn.action && btn.action}
+                                >
                                  {btn.label.length && btn.label}
                                </StyledAlertButton>
                              </StyledAlertButtonsContainer>

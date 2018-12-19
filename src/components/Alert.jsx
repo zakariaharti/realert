@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import ReactDOM from 'react-dom';
 
 import AlertComponent from './AlertComponent';
 import GlobalStyles from '../StyledComponents/GlobalStyles';
@@ -18,7 +19,6 @@ class Alert extends Component {
      */
     this.state = {
       isOpen: this.props.isOpen,
-      timer: this.props.dismissAfter,
     };
 
     this.close.bind(this);
@@ -28,7 +28,9 @@ class Alert extends Component {
    * invoking onAdd with the component is mounted on the DOM
    */
   componentDidMount(){
-    const { onAdd } = this.props;
+    const {
+      onAdd,
+    } = this.props;
     if(onAdd && typeof onAdd === "function"){
       onAdd();
     }
@@ -40,19 +42,9 @@ class Alert extends Component {
   componentDidUpdate(prevProps) {
     const {
       isOpen,
-      dismissAfter
     } = this.props;
     if (prevProps.isOpen !== isOpen) {
       this.setState({ isOpen: isOpen });
-    }
-    if (prevProps.dismissAfter !== dismissAfter) {
-      this.setState({ timer: dismissAfter });
-    }
-
-    if(this.state.dismissAfter > 0){
-      window.setTimeout(() => {
-        this.close();
-      }, this.state.dismissAfter)
     }
   }
 
@@ -107,7 +99,7 @@ class Alert extends Component {
 
 Alert.defaultProps = {
   isOpen: false,
-  dismissAfter: 0
+  dismissAfter: 0,
 };
 
 export default Alert;
