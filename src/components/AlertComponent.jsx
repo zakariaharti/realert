@@ -37,9 +37,6 @@ const AlertComponent = (props) => {
     allowHTML,
     buttons,
     timeout,
-    /*
-    dangerMode,
-    */
   } = props;
 
 

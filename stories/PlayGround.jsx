@@ -47,6 +47,8 @@ class PlayGround extends Component {
     this.state = {
       isOpen: false,
     };
+
+    this.myRef = React.createRef();
   }
 
   render(){
@@ -59,7 +61,11 @@ class PlayGround extends Component {
           click me!
         </StyledButton>
 
-          <Alert {...this.props} />
+          <Alert
+            ref={this.myRef}
+            isOpen={this.state.isOpen}
+            {...this.props}
+          />
         </StyledContainer>
       </div>
     );
