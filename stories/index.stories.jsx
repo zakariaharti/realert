@@ -69,6 +69,24 @@ const mockData7 = {
   allowHTML: true
 };
 
+const mockData8 = {
+  icon: "success",
+  title: "Success!",
+  content: "You have been successfuly registered",
+  allowHTML: false,
+  buttons: [
+    {
+      label: 'Comfirm',
+      action: () => action('comfirmed')
+    },
+    {
+      label: 'Cancel',
+      type: 'cancel',
+      action: () => action('canceled')
+    }
+  ]
+};
+
 const stories = storiesOf('realert',module).addDecorator(withInfo);
 
 stories.add('welcome', () => (
@@ -190,6 +208,16 @@ stories2.add('with icon (warning)', () => (
 
 stories2.add('with icon (error)', () => (
     <PlayGround {...mockData7} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('with buttons', () => (
+    <PlayGround {...mockData8} />
 ), {
   info: {
     inline: true,
