@@ -15,7 +15,7 @@
     "JavaScript alert",
     "alert alternative",
     "react",
-    "styled-components",
+    "styled-components"
   ],
   "bugs": {
     "url": "https://github.com/zakariaharti/realert/issues"
@@ -61,6 +61,6 @@
     "test:coverage": "jest --coverage",
     "eslint:init": "eslint --init",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -o docs"
   }
 }
