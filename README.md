@@ -85,13 +85,13 @@ class MyComponent extends React.Component{
 ## API Documentation
 
 * [Objects](https://github.com/zakariaharti/realert#objects)
-    * [Alert](https://github.com/zakariaharti/realert#notification)
+    * [Alert](https://github.com/zakariaharti/realert#alert)
     * [Alert button](https://github.com/zakariaharti/realert#realert-button)
 * [Customize styling](https://github.com/zakariaharti/realert#customize-styling)
 
 ### Objects
 
-#### Notification
+#### Alert
 
 | Property     | Type             | Default | Description |
 | ------------ | ---------------- | ------- | ----------- |
@@ -111,7 +111,7 @@ class MyComponent extends React.Component{
 | buttonStyles      | string            |         | add custom styles to the button of the alert.
 | footerStyles      | string            |         | add custom styles to the footer html div.
 
-#### Notification button
+#### Alert button
 
 | Property     | Type     | Default | Description |
 | ------------ | :------: | :-----: | ----------- |
