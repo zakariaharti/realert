@@ -5,3 +5,10 @@ docs/
 images/
 stories/
 test/
+.babelrc
+.eslintignore
+.eslintrc.json
+jest.config.js
+LICENSE
+webpack.config.js
+README.md
