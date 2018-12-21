@@ -1,5 +1,5 @@
 # Realert
-[![npm](https://img.shields.io/npm/v/realert.svg?style=for-the-badge)](https://www.npmjs.com/package/@zakariaharti/realert)
+[![npm](https://img.shields.io/npm/v/@zakariaharti/realert.svg?style=for-the-badge)](https://www.npmjs.com/package/@zakariaharti/realert)
  [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/zakariaharti/realert/blob/master/LICENSE.md)
 [![Storybook](https://img.shields.io/badge/docs-storybook-pink.svg?style=for-the-badge)](https://zakariaharti.github.io/realert/)
 [![style: styled-components](https://img.shields.io/badge/style-styled--components-%23d1a05c.svg?style=for-the-badge)](https://github.com/styled-components/styled-components)
