@@ -2,7 +2,7 @@
   "name": "realert",
   "version": "0.1.0",
   "description": "Sweet simple JavaScript alert alternative for React built with styled-components",
-  "main": "build/index.js",
+  "main": "build/index.bundle.js",
   "repository": "https://github.com/zakariaharti/realert.git",
   "author": "zakariaharti <zakariya.harti@gmail.com>",
   "license": "MIT",
