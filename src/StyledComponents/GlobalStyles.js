@@ -3,16 +3,16 @@ import {createGlobalStyle} from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root{
     --realert-btn-confirm: #7cd1f9;
-    --realert-btn-confirm-hover: var(--alert-btn-confirm);
-    --realert-btn-confirm-active: var(--alert-btn-confirm);
+    --realert-btn-confirm-hover: #4fc7ff;
+    --realert-btn-confirm-active: #4fc7ff;
 
     --realert-btn-cancel: #EFEFEF;
-    --realert-btn-cancel-hover: var(--alert-btn-cancel);
-    --realert-btn-cancel-active: var(--alert-btn-cancel);
+    --realert-btn-cancel-hover: #d8d8d8;
+    --realert-btn-cancel-active: #d8d8d8;
 
     --realert-btn-danger: #e64942;
-    --realert-btn-danger-hover: var(--alert-btn-danger);
-    --realert-btn-danger-active: var(--alert-btn-danger);
+    --realert-btn-danger-hover: #e03d36;
+    --realert-btn-danger-active: #e03d36;
 
     --realert-focus-color: rgba(43, 114, 165, 0.3);
 

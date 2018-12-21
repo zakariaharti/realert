@@ -7,11 +7,27 @@ import { withInfo } from '@storybook/addon-info';
 import PlayGround from './PlayGround';
 
 const mockData = {
-  title: "this is title",
-  content: "this is content",
-  level: "this is level",
-  icon: "",
+  title: "This is title",
+  content: "Awesome content text here or custom HTML",
+  icon: "success",
   allowHTML: false,
+  buttons: [
+    {
+      label: 'comfirm'
+    },
+    {
+      label: 'cancel',
+      type: 'cancel'
+    },
+    {
+      label: 'danger!',
+      type: 'danger'
+    }
+  ]
+};
+
+const mockData1 = {
+  title: "Awesome title goes here ",
 };
 
 const stories = storiesOf('relaert',module).addDecorator(withInfo);
@@ -68,5 +84,15 @@ stories.add('welcome', () => (
            }
           }
     `
+  }
+});
+
+stories.add('welcome\Examples\with title', () => (
+    <PlayGround {...mockData1} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
   }
 });

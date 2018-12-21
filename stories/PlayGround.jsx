@@ -58,8 +58,13 @@ class PlayGround extends Component {
           <StyledButton
             onClick={() => this.setState({ isOpen: !this.state.isOpen })}
           >
-          click me!
-        </StyledButton>
+            click me!
+          </StyledButton>
+          <StyledButton
+            onClick={() => this.myRef.current.close()}
+          >
+            close me!
+          </StyledButton>
 
           <Alert
             ref={this.myRef}

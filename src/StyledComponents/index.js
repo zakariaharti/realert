@@ -79,6 +79,10 @@ export const StyledAlertOverlay = styled.div`
   }
 `;
 
+export const StyledExtendedAlertOverlay = styled(StyledAlertOverlay)`
+  ${props => css`${props.styles}`}
+`;
+
 export const StyledAlertContainer = styled.div`
   width: 478px;
   pointer-events: none;
@@ -104,6 +108,10 @@ export const StyledAlertContainer = styled.div`
   }
 `;
 
+export const StyledExtendedAlertContainer = styled(StyledAlertContainer)`
+  ${props => css`${props.styles}`}
+`;
+
 export const StyledTitle = styled.div`
   color: rgba(0, 0, 0, 0.65);
   font-weight: 600;
@@ -125,6 +133,10 @@ export const StyledTitle = styled.div`
   &:not(:last-child) {
     margin-bottom: 13px;
   }
+`;
+
+export const StyledExtendedTitle = styled(StyledTitle)`
+  ${props => css`${props.styles}`}
 `;
 
 export const StyledContent = styled.div`
@@ -151,8 +163,12 @@ export const StyledContent = styled.div`
   }
 `;
 
+export const StyledExtendedContent = styled(StyledContent)`
+  ${props => css`${props.styles}`}
+`;
+
 export const StyledAlertFooter = styled.div`
-  text-align: right;
+  text-align: ${props => props.align};
   padding-top: 13px;
   margin-top: 13px;
   padding: 13px 16px;
@@ -161,10 +177,18 @@ export const StyledAlertFooter = styled.div`
   border-top-right-radius: 0;
 `;
 
+export const StyledExtendedAlertFooter = styled(StyledAlertFooter)`
+  ${props => css`${props.styles}`}
+`;
+
 export const StyledAlertButtonsContainer = styled.div`
   margin: 5px;
   display: inline-block;
   position: relative;
+`;
+
+export const StyledExtendedButtonsContainer = styled(StyledAlertButtonsContainer)`
+  ${props => css`${props.styles}`}
 `;
 
 export const StyledAlertButton = styled.button`
@@ -172,13 +196,16 @@ export const StyledAlertButton = styled.button`
     if (props.status === 'cancel') {
       return 'var(--realert-btn-cancel)';
     }
+    if (props.status === 'danger') {
+      return 'var(--realert-btn-danger)';
+    }
     return 'var(--realert-btn-confirm)';
   }};
   color: ${(props) => {
     if (props.status === 'cancel') {
       return '#555555';
     }
-    return 'white';
+    return '#ffffff';
   }};
   border: none;
   box-shadow: none;
@@ -190,7 +217,15 @@ export const StyledAlertButton = styled.button`
   cursor: pointer;
 
   &:not([disabled]):hover {
-    background-color: var(--realert-btn-confirm-hover);
+    background-color: ${(props) => {
+      if(props.status === 'cancel'){
+        return 'var(--realert-btn-cancel-hover)';
+      }
+      if(props.status === 'danger'){
+        return 'var(--realert-btn-danger-hover)';
+      }
+      return 'var(--realert-btn-confirm-hover)';
+    }};
   }
   &:active {
     background-color: var(--realert-btn-confirm-active);
@@ -205,6 +240,10 @@ export const StyledAlertButton = styled.button`
     opacity: 0.5;
     cursor: default;
   }
+`;
+
+export const StyledExtendedAlertButton = styled(StyledAlertButton)`
+  ${props => css`${props.styles}`}
 `;
 
 export const StyledIcon = styled.div`

@@ -5,13 +5,13 @@ import uuid from 'uuid/v1';
 /* eslint-disable */
 
 import {
-  StyledTitle,
-  StyledContent,
-  StyledAlertButton,
-  StyledAlertFooter,
+  StyledExtendedTitle as StyledTitle,
+  StyledExtendedContent as StyledContent,
+  StyledExtendedAlertButton as StyledAlertButton,
+  StyledExtendedAlertFooter as StyledAlertFooter,
   StyledAlertWrapper,
-  StyledAlertOverlay,
-  StyledAlertContainer,
+  StyledExtendedAlertOverlay as StyledAlertOverlay,
+  StyledExtendedAlertContainer as StyledAlertContainer,
   StyledAlertButtonsContainer
 } from '../StyledComponents';
 
@@ -37,6 +37,13 @@ const AlertComponent = (props) => {
     allowHTML,
     buttons,
     timeout,
+    overlayStyles,
+    containerStyles,
+    titleStyles,
+    contentStyles,
+    footerStyles,
+    buttonStyles,
+    alignButtons
   } = props;
 
 
@@ -49,7 +56,7 @@ const AlertComponent = (props) => {
         classNames="realert-overlay"
         unmountOnExit
       >
-         <StyledAlertOverlay>
+         <StyledAlertOverlay styles={overlayStyles}>
 
             <CSSTransition
               in={true}
@@ -58,7 +65,7 @@ const AlertComponent = (props) => {
               unmountOnExit
             >
 
-              <StyledAlertContainer>
+              <StyledAlertContainer styles={containerStyles}>
                   {
                     icon && icon == "success" ? (
                         <SuccessIcon />
@@ -75,7 +82,7 @@ const AlertComponent = (props) => {
                       allowHTML && title ? (
                         <div dangerouslySetInnerHTML={getContent(title)} />
                       ) : title ? (
-                        <StyledTitle>{title}</StyledTitle>
+                        <StyledTitle styles={titleStyles}>{title}</StyledTitle>
                       ) : null
                   }
 
@@ -83,19 +90,20 @@ const AlertComponent = (props) => {
                       allowHTML && content ? (
                         <div dangerouslySetInnerHTML={getContent(content)} />
                       ) : content ? (
-                        <StyledContent>{content}</StyledContent>
+                        <StyledContent styles={contentStyles}>{content}</StyledContent>
                       ) : null
                   }
 
                   {
                       typeof buttons !== 'undefined' &&
                       buttons !== false && buttons.length ?
-                       <StyledAlertFooter>
+                       <StyledAlertFooter styles={footerStyles} align={alignButtons || 'right'}>
                          {
                            buttons.map(btn => (
                              <StyledAlertButtonsContainer key={uuid()}>
                                <StyledAlertButton
-                                 type={btn.type || 'primary'}
+                                 styles={buttonStyles}
+                                 status={btn.type || 'primary'}
                                  onClick={btn.action && btn.action}
                                 >
                                  {btn.label.length && btn.label}

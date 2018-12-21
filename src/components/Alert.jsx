@@ -98,7 +98,7 @@ class Alert extends Component {
 }
 
 Alert.defaultProps = {
-  isOpen: false,
+  isOpen: false
 };
 
 export default Alert;
