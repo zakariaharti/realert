@@ -1,1 +1,7 @@
 src/
+.storybook/
+coverage/
+docs/
+images/
+stories/
+test/

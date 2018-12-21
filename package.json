@@ -1,5 +1,5 @@
 {
-  "name": "realert",
+  "name": "@zakariaharti/realert",
   "version": "0.1.0",
   "description": "Sweet simple JavaScript alert alternative for React built with styled-components",
   "main": "build/index.bundle.js",

@@ -26,13 +26,13 @@ Check out the [demo](https://zakariaharti.github.io/realert/)
 **using npm**
 
 ```
-npm install realert --save
+npm install @zakariaharti/realert --save
 ```
 
 **using yarn**
 
 ```
-yarn add realert
+yarn add @zakariaharti/realert
 ```
 
 ## Usage
