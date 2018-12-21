@@ -1,4 +1,4 @@
-# React-awesome-notifications
+# Realert
 [![npm](https://img.shields.io/npm/v/realert.svg?style=for-the-badge)](https://www.npmjs.com/package/realert)
  [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/zakariaharti/realert/blob/master/LICENSE.md)
 [![Storybook](https://img.shields.io/badge/docs-storybook-pink.svg?style=for-the-badge)](https://zakariaharti.github.io/realert/)
@@ -234,7 +234,7 @@ Before a pull request :
 
  - Don't forget to update README or documentation if it's necessary
  - Check code status with `npm run webpack`
- - Run tests with `npm run test` 
+ - Run tests with `npm run test`
  - If you made styles changes or any changes related to user interfaces, launch demo with `npm start` to check the result in the browser. Check it on all possible browsers that you have. (Precise the list in the PR)
 
 ## License
