@@ -1,12 +1,26 @@
 {
   "name": "realert",
   "version": "0.1.0",
-  "description": "sweet JavaScript alert alternative for React & Redux built with styled-components",
+  "description": "Sweet simple JavaScript alert alternative for React with styled-components",
   "main": "build/index.js",
   "repository": "https://github.com/zakariaharti/realert.git",
   "author": "zakariaharti <zakariya.harti@gmail.com>",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "realert",
+    "alert",
+    "alert component",
+    "react-alert",
+    "JavaScript alert",
+    "alert alternative",
+    "react",
+    "styled-components",
+  ],
+  "bugs": {
+    "url": "https://github.com/zakariaharti/realert/issues"
+  },
+  "homepage": "https://github.com/zakariaharti/realert#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
