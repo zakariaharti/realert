@@ -41,6 +41,34 @@ const mockData3 = {
   allowHTML: true
 };
 
+const mockData4 = {
+  icon: "success",
+  title: "Success!",
+  content: "text here will get a <b>bold</b> font style",
+  allowHTML: true
+};
+
+const mockData5 = {
+  icon: "info",
+  title: "Info!",
+  content: "text here will get a <b>bold</b> font style",
+  allowHTML: true
+};
+
+const mockData6 = {
+  icon: "warning",
+  title: "Warning!",
+  content: "text here will get a <b>bold</b> font style",
+  allowHTML: true
+};
+
+const mockData7 = {
+  icon: "error",
+  title: "Error!",
+  content: "text here will get a <b>bold</b> font style",
+  allowHTML: true
+};
+
 const stories = storiesOf('realert',module).addDecorator(withInfo);
 
 stories.add('welcome', () => (
@@ -122,6 +150,46 @@ stories2.add('title + content', () => (
 
 stories2.add('content with custom HTML', () => (
     <PlayGround {...mockData3} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('with icon (success)', () => (
+    <PlayGround {...mockData4} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('with icon (info)', () => (
+    <PlayGround {...mockData5} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('with icon (warning)', () => (
+    <PlayGround {...mockData6} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('with icon (error)', () => (
+    <PlayGround {...mockData7} />
 ), {
   info: {
     inline: true,
