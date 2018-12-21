@@ -42,6 +42,7 @@
     "styled-components": "^4.1.2"
   },
   "scripts": {
+    "build": "webpack",
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "eslint:init": "eslint --init",
