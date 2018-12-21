@@ -80,16 +80,16 @@ const AlertComponent = (props) => {
 
                   {
                       allowHTML && title ? (
-                        <div dangerouslySetInnerHTML={getContent(title)} />
-                      ) : title ? (
+                        <StyledTitle styles={titleStyles} dangerouslySetInnerHTML={{__html: title}} />
+                      ) : !allowHTML && title ? (
                         <StyledTitle styles={titleStyles}>{title}</StyledTitle>
                       ) : null
                   }
 
                   {
                       allowHTML && content ? (
-                        <div dangerouslySetInnerHTML={getContent(content)} />
-                      ) : content ? (
+                        <StyledContent styles={contentStyles} dangerouslySetInnerHTML={{__html: content}} />
+                      ) : !allowHTML && content ? (
                         <StyledContent styles={contentStyles}>{content}</StyledContent>
                       ) : null
                   }

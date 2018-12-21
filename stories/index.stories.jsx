@@ -30,7 +30,18 @@ const mockData1 = {
   title: "Awesome title goes here ",
 };
 
-const stories = storiesOf('relaert',module).addDecorator(withInfo);
+const mockData2 = {
+  title: "Awesome title goes here ",
+  content: "content text goes here"
+};
+
+const mockData3 = {
+  title: "Awesome title goes here ",
+  content: "text here will get a <b>bold</b> font style",
+  allowHTML: true
+};
+
+const stories = storiesOf('realert',module).addDecorator(withInfo);
 
 stories.add('welcome', () => (
     <PlayGround {...mockData} />
@@ -87,8 +98,30 @@ stories.add('welcome', () => (
   }
 });
 
-stories.add('welcome\Examples\with title', () => (
+const stories2 = storiesOf('realert/Examples',module).addDecorator(withInfo);
+
+stories2.add('with title', () => (
     <PlayGround {...mockData1} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('title + content', () => (
+    <PlayGround {...mockData2} />
+), {
+  info: {
+    inline: true,
+    source: false,
+    propTables: false,
+  }
+});
+
+stories2.add('content with custom HTML', () => (
+    <PlayGround {...mockData3} />
 ), {
   info: {
     inline: true,
