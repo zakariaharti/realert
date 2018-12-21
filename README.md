@@ -6,7 +6,7 @@
 
 Sweet simple JavaScript alert alternative for React built with styled-components
 
-![alt text](https://github.com/zakariaharti/realert/raw/master/src/images/realert.gif)
+![alt text](https://github.com/zakariaharti/realert/blob/master/images/realert.gif)
 
 ## Table of contents
 
