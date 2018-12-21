@@ -43,7 +43,7 @@ Follow this simple steps to integrate realert to your application.
 
 ``` js
 import React from 'react';
-import Alert from 'realert';
+import Alert from '@zakariaharti/realert';
 
 class MyComponent extends React.Component{
   state = {
@@ -125,7 +125,7 @@ example
 
 ``` js
 import React from 'react';
-import Alert from 'realert';
+import Alert from '@zakariaharti/realert';
 
 class MyComponent extends React.Component{
   state = {
